@@ -1,0 +1,14 @@
+PODS:
+  - AWSRequestSigner (0.0.1)
+
+DEPENDENCIES:
+  - AWSRequestSigner (from `../`)
+
+EXTERNAL SOURCES:
+  AWSRequestSigner:
+    :path: ../
+
+SPEC CHECKSUMS:
+  AWSRequestSigner: 4918f097a9db303be6a0cdf1875dbb2c54e26925
+
+COCOAPODS: 0.29.0

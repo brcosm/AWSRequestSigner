@@ -1,0 +1,6 @@
+xcodeproj 'Tests'
+workspace '../AWSRequestSigner'
+inhibit_all_warnings!
+
+link_with 'Unit Tests'
+pod 'AWSRequestSigner', :path => '../'
