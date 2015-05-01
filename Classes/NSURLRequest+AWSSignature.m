@@ -108,7 +108,6 @@
                                      [self aws_headerSignature],
                                      [self aws_payloadHash]]
                                    componentsJoinedByString:@"\n"];
-    NSLog(@"canonical request: %@", canonicalRequest);
     return canonicalRequest;
 }
 
