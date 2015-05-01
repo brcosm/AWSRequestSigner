@@ -47,4 +47,29 @@
     return [_fmt dateFromString:dateString];
 }
 
+- (NSString *)httpString {
+    static NSDateFormatter *_fmt;
+    static dispatch_once_t oncePredicate;
+    dispatch_once(&oncePredicate, ^{
+        _fmt = [[NSDateFormatter alloc] init];
+        _fmt.locale     = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+        _fmt.timeZone   = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
+        _fmt.dateFormat = @"EEE',' dd MMM yyyy HH':'mm':'ss 'GMT'";
+    });
+    return [_fmt stringFromDate:self];
+}
+
++ (instancetype)http_date:(NSString *)dateString {
+    static NSDateFormatter *_fmt;
+    static dispatch_once_t oncePredicate;
+    dispatch_once(&oncePredicate, ^{
+        _fmt = [[NSDateFormatter alloc] init];
+        _fmt.locale     = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+        _fmt.timeZone   = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
+        _fmt.dateFormat = @"EEE',' dd MMM yyyy HH':'mm':'ss 'GMT'";
+    });
+    
+    return [_fmt dateFromString:dateString];
+}
+
 @end

@@ -11,9 +11,10 @@
 @interface NSDate (AWSSignature)
 
 + (instancetype)aws_date:(NSString *)dateString;
++ (instancetype)http_date:(NSString *)dateString;
 
 - (NSString *)aws_scopeString;
-
 - (NSString *)aws_iso8601String;
+- (NSString *)httpString;
 
 @end

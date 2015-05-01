@@ -100,14 +100,15 @@
 #pragma mark - Public
 
 - (NSString *)aws_canonicalRequestString {
-    return [@[
-        [self HTTPMethod],
-        [self aws_canonicalURI],
-        [self aws_canonicalQueryString],
-        [self aws_canonicalHeaderString],
-        [self aws_headerSignature],
-        [self aws_payloadHash]]
-    componentsJoinedByString:@"\n"];
+    NSString * canonicalRequest = [@[
+                                     [self HTTPMethod],
+                                     [self aws_canonicalURI],
+                                     [self aws_canonicalQueryString],
+                                     [self aws_canonicalHeaderString],
+                                     [self aws_headerSignature],
+                                     [self aws_payloadHash]]
+                                   componentsJoinedByString:@"\n"];
+    return canonicalRequest;
 }
 
 @end
